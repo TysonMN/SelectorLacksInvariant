@@ -1,0 +1,19 @@
+﻿<Window x:Class="MyNamespace.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <StackPanel>
+    <Button Content="Check Invariant" Click="CheckInvariant"/>
+    <StackPanel Orientation="Horizontal">
+      <TextBlock Text="Invariant satisfied? "/>
+      <TextBlock x:Name="YesNoTextBlock"/>
+    </StackPanel>
+    <DataGrid x:Name="MyDataGrid"
+              AutoGenerateColumns="False"
+              SelectedItem="{Binding MySelectedItem}"
+              ItemsSource="{Binding MyItems}">
+      <DataGrid.Columns>
+        <DataGridTextColumn Binding="{Binding .}" Header="MyHeader"/>
+      </DataGrid.Columns>
+    </DataGrid>
+  </StackPanel>
+</Window>
